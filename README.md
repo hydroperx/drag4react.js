@@ -28,6 +28,6 @@ function Content()
 
 ## Setting property to translate
 
-The library uses `inset` for moving elements. If on drag stop you wish to change that, set the option `limit` to a parent and `finish="translate"` (for the cascading `translate` property), or `finish="transform"` (for the cascading `transform` property using the `translate()` function), or `finish="position"` (for the cascading `left` and `top` properties).
+The library uses `inset` or `left` and `top` for moving elements. If on drag stop you wish to change that, set the option `finishParent` to a parent and `finish="translate"` (for the cascading `translate` property), or `finish="transform"` (for the cascading `transform` property using the `translate()` function), or `finish="position"` (for the cascading `left` and `top` properties).
 
-You may also want to use cascading `rem` units for the finishing position; therefore, you may need to pass the option `rem={size}`.
+*Important*: You may also want to use cascading `rem` units for the finishing position; therefore, you may need to pass the option `rem={size}`.
