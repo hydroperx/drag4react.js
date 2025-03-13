@@ -1,0 +1,6 @@
+{
+  "name": "@hydroper/draggable",
+  "version": "1.0.0",
+  "exports": "./src/index.tsx",
+  "license": "Apache-2.0"
+}
