@@ -1,5 +1,5 @@
 import React, { useEffect, Ref } from "react";
-import ext_Draggable from "draggable";
+import * as ext_Draggable from "draggable";
 
 const at_browser = typeof window !== "undefined";
 
