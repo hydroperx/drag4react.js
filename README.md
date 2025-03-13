@@ -5,7 +5,7 @@ Drag-n-drop for React.
 ## Getting started
 
 ```tsx
-import Draggable from "com.hydroper.draggable";
+import Draggable from "com.hydroper.reactdraggable";
 import { useRef } from "react";
 
 function Content()
