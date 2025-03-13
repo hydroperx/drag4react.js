@@ -1,5 +1,5 @@
-import React, { useEffect, Ref } from "react";
-import * as ext_Draggable from "draggable";
+import React, { useEffect } from "react";
+import ext_Draggable from "com.hydroper.domdraggable";
 
 const at_browser = typeof window !== "undefined";
 

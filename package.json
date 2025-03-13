@@ -1,13 +1,13 @@
 {
   "name": "com.hydroper.reactdraggable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {},
   "main": "src/index.tsx",
   "dependencies": {
     "assert": "^2.1.0",
     "clone": "^2.1.2",
-    "draggable": "^4.2.0",
+    "com.hydroper.domdraggable": "^4.2.0",
     "extend": "^3.0.2"
   },
   "peerDependencies": {

@@ -1,4 +1,4 @@
-declare module "draggable"
+declare module "com.hydroper.domdraggable"
 {
     export class Draggable
     {
