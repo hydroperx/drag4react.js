@@ -8,8 +8,7 @@
     "assert": "^2.1.0",
     "clone": "^2.1.2",
     "draggable": "^4.2.0",
-    "extend": "^3.0.2",
-    "jquery": "^3.7.1"
+    "extend": "^3.0.2"
   },
   "peerDependencies": {
     "react": ">=18.3.1"
@@ -25,7 +24,6 @@
     "@types/assert": "^1.5.11",
     "@types/clone": "^2.1.4",
     "@types/extend": "^3.0.4",
-    "@types/jquery": "^3.5.32",
     "@types/react": "^18.3.1",
     "typescript": "~5.6.2"
   }
