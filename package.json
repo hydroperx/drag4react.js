@@ -9,7 +9,7 @@
     "clone": "^2.1.2",
     "draggable": "^4.2.0",
     "extend": "^3.0.2",
-    "react": ">=18.3.1"
+    "react": "^18.3.1"
   },
   "description": "React drag-n-drop",
   "license": "Apache-2.0",
