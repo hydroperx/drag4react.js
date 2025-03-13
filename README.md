@@ -5,7 +5,7 @@
   <a href="https://jsr.io/@hydroper/draggable/doc"><img src="https://img.shields.io/badge/API%20Documentation-gray"></a>
 </p>
 
-Drag-n-drop for React. Modifies specifically the `inset` property for setting position.
+Drag-n-drop for React.
 
 ## Getting started
 
@@ -25,3 +25,9 @@ function Content()
     );
 }
 ```
+
+## Setting property to translate
+
+The library uses `inset` for moving elements. If on drag stop you wish to change that, set the option `limit` to a parent and `finish="translate"` (for the cascading `translate` property), or `finish="transform"` (for the cascading `transform` property using the `translate()` function), or `finish="position"` (for the cascading `left` and `top` properties).
+
+You may also want to use cascading `rem` units for the finishing position; therefore, you may need to pass the option `rem={size}`.
