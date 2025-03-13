@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {},
-  "main": "src/index.ts",
+  "main": "src/index.tsx",
   "dependencies": {
     "assert": "^2.1.0",
     "clone": "^2.1.2",
