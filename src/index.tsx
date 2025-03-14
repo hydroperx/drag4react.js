@@ -108,8 +108,6 @@ export type DraggableOptions = {
     limit?: HTMLElement,
     children?: React.ReactNode,
     disabled?: boolean,
-    finish?: "translate" | "transform" | "position",
-    finishParent?: HTMLElement,
     rem?: number,
 
     dragStart?: (data: DraggableData) => void,
