@@ -127,7 +127,7 @@ const utils = {
         const e = element as HTMLElement;
         const { inset } = e.style;
         if (!inset) return { left: 0, top: 0 };
-        const m = inset.match(/(?:\d*\.?\d+|\d+)/g);
+        const m = inset.match(/-?(?:\d*\.\d+|\d+)/g);
         if (!m) return { left: 0, top: 0 };
         return {
             left: parseFloat(m[1]),
@@ -139,8 +139,8 @@ const utils = {
     {
         const e = element as HTMLElement;
         const { left, top } = e.style;
-        const m_top = top ? top.match(/(?:\d*\.?\d+|\d+)/) : "0";
-        const m_left = left ? left.match(/(?:\d*\.?\d+|\d+)/) : "0";
+        const m_top = top ? top.match(/-?(?:\d*\.\d+|\d+)/) : "0";
+        const m_left = left ? left.match(/-?(?:\d*\.\d+|\d+)/) : "0";
         return {
             left: parseFloat(m_left ? m_left[0] : "0"),
             top: parseFloat(m_top ? m_top[0] : "0"),
