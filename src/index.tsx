@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ext_Draggable from "com.hydroper.domdraggable";
+import ext_Draggable from "com.hydroper.draggable";
 
 const at_browser = typeof window !== "undefined";
 
@@ -31,7 +31,7 @@ export default function Draggable(options: DraggableOptions)
         dragMove: drag_move,
         dragStop: drag_stop,
         limit,
-        element: el_ref,
+        nodeRef: el_ref,
         children,
         disabled,
     } = options;
@@ -104,7 +104,7 @@ export default function Draggable(options: DraggableOptions)
 }
 
 export type DraggableOptions = {
-    element: React.MutableRefObject<HTMLElement>,
+    nodeRef: React.MutableRefObject<HTMLElement>,
     limit?: HTMLElement,
     children?: React.ReactNode,
     disabled?: boolean,

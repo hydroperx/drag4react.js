@@ -12,7 +12,7 @@ function Content()
 {
     const div_ref = useRef<HTMLDivElement | null>(null);
     return (
-        <Draggable element={div_ref}>
+        <Draggable nodeRef={div_ref}>
             <div ref={div_ref}>
                 Drag me
             </div>
