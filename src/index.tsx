@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ext_Draggable from "com.hydroper.draggable";
+import BaseDraggable from "@hydroper/draggable";
 
 const at_browser = typeof window !== "undefined";
 
@@ -36,11 +36,11 @@ export default function Draggable(options: DraggableOptions)
         disabled,
     } = options;
 
-    let draggable: ext_Draggable | null = null;
+    let draggable: BaseDraggable | null = null;
 
     function createDraggable()
     {
-        draggable = new ext_Draggable(el_ref.current!, {
+        draggable = new BaseDraggable(el_ref.current!, {
             limit,
 
             onDragStart(element, x, y, event) {
