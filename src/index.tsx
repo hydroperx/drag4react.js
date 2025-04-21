@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import BaseDraggable from "@hydroper/draggable";
+import BaseDraggable from "@hydroperx/draggable";
 
 const at_browser = typeof window !== "undefined";
 
