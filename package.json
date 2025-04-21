@@ -1,10 +1,14 @@
 {
   "name": "@hydroperx/drag4react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {},
   "main": "src/index.tsx",
   "dependencies": {
+    "@types/assert": "^1.5.11",
+    "@types/clone": "^2.1.4",
+    "@types/extend": "^3.0.4",
+    "@types/react": "^18.3.1",
     "assert": "^2.1.0",
     "clone": "^2.1.2",
     "@hydroperx/draggable": "^1.0.0",
@@ -25,10 +29,6 @@
   ],
   "author": "Hydroper <HydroperFox@gmail.com>",
   "devDependencies": {
-    "@types/assert": "^1.5.11",
-    "@types/clone": "^2.1.4",
-    "@types/extend": "^3.0.4",
-    "@types/react": "^18.3.1",
     "typescript": "~5.6.2"
   }
 }
