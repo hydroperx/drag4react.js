@@ -23,4 +23,4 @@ function Content()
 
 ## Resulting property values
 
-The library as part of the `draggable` dependency uses `inset` for moving elements.
+The library as part of the `draggable` dependency uses `inset`/`left`/`top` for moving elements.
