@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hydroperx/drag4react.git"
+    "url": "https://github.com/hydroperx/drag4react.js.git"
   },
   "peerDependencies": {
     "react": ">=18.3.1"
