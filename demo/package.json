@@ -1,0 +1,24 @@
+{
+  "name": "demo",
+  "type": "module",
+  "devDependencies": {
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0"
+  },
+  "dependencies": {
+    "@hydroperx/drag4react": "file:..",
+    "@types/node": "^22.13.4",
+    "react-dom": "^19.0.0"
+  }
+}
