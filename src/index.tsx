@@ -20,7 +20,16 @@ function window_onPointerUp(e: PointerEvent): void {
 window.addEventListener("pointerup", window_onPointerUp);
 window.addEventListener("pointercancel", window_onPointerUp);
 
-export default function Draggable(options: DraggableOptions) {
+export default function Draggable(options: {
+  nodeRef: React.MutableRefObject<HTMLElement>;
+  limit?: HTMLElement | null;
+  children?: React.ReactNode;
+  disabled?: boolean;
+
+  dragStart?: (data: DraggableData) => void;
+  dragMove?: (data: DraggableData) => void;
+  dragStop?: (data: DraggableData) => void;
+}) {
   let {
     dragStart: drag_start,
     dragMove: drag_move,
@@ -35,7 +44,7 @@ export default function Draggable(options: DraggableOptions) {
 
   function createDraggable() {
     draggable = new BaseDraggable(el_ref.current!, {
-      limit,
+      limit: limit === null ? undefined : limit,
 
       onDragStart(element, x, y, event) {
         drag_start?.({ element: element as HTMLElement, x, y });
@@ -46,27 +55,6 @@ export default function Draggable(options: DraggableOptions) {
       },
 
       onDragEnd(element, x, y, event) {
-        /*
-                if (finish_parent)
-                {
-                    if (finish === "translate")
-                    {
-                        const offsets = utils.getElementRelativeOffset(element, finish_parent);
-                        console.log(offsets)
-                        const inset_offsets = utils.extractInsetOffsets(element);
-                        const lefttop_offsets = utils.extractLeftTopOffsets(element);
-                        let x = (offsets.left + inset_offsets.left + lefttop_offsets.left) + "px";
-                        let y = (offsets.top + inset_offsets.top + lefttop_offsets.top) + "px";
-                        if (rem !== undefined)
-                        {
-                            x = ((offsets.left + inset_offsets.left + lefttop_offsets.left) / rem) + "rem";
-                            y = ((offsets.top + inset_offsets.top + lefttop_offsets.top) / rem) + "rem";
-                        }
-                        (element as HTMLElement).style.translate = `${x} ${y}`;
-                        (element as HTMLElement).style.inset = "";
-                    }
-                }
-                */
         drag_stop?.({ element: element as HTMLElement, x, y });
       },
     });
@@ -94,24 +82,13 @@ export default function Draggable(options: DraggableOptions) {
   return <>{children}</>;
 }
 
-export type DraggableOptions = {
-  nodeRef: React.MutableRefObject<HTMLElement>;
-  limit?: HTMLElement;
-  children?: React.ReactNode;
-  disabled?: boolean;
-  rem?: number;
-
-  dragStart?: (data: DraggableData) => void;
-  dragMove?: (data: DraggableData) => void;
-  dragStop?: (data: DraggableData) => void;
-};
-
 export type DraggableData = {
   element: HTMLElement;
   x: number;
   y: number;
 };
 
+/*
 const utils = {
   extractInsetOffsets(element: Element): { left: number; top: number } {
     const e = element as HTMLElement;
@@ -136,3 +113,4 @@ const utils = {
     };
   },
 };
+*/
