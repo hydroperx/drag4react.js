@@ -42,21 +42,19 @@ export default function Draggable(options: {
   }
 
   useEffect(() => {
-    if (!disabled) {
-      if (draggable) draggable.destroy();
-      create_draggable();
-    }
+    if (draggable) draggable.destroy(), draggable = null;
+    if (!disabled) create_draggable();
 
     // Cleanup
     return () => {
-      if (draggable) draggable.destroy(), (draggable = null);
+      if (draggable) draggable.destroy(), draggable = null;
     };
   }, [disabled]);
 
   useEffect(() => {
     // Cleanup
     return () => {
-      if (draggable) draggable.destroy(), (draggable = null);
+      if (draggable) draggable.destroy(), draggable = null;
     };
   }, []);
 
