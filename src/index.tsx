@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import BaseDraggable from "@hydroperx/draggable";
 
 export default function Draggable(options: {
@@ -21,10 +21,10 @@ export default function Draggable(options: {
     disabled,
   } = options;
 
-  let draggable: BaseDraggable | null = null;
+  const draggable = useRef<BaseDraggable | null>(null);
 
   function create_draggable() {
-    draggable = new BaseDraggable(el_ref.current!, {
+    draggable.current = new BaseDraggable(el_ref.current!, {
       limit: limit_ref.current ?? undefined,
 
       onDragStart(element, x, y, event) {
@@ -42,19 +42,21 @@ export default function Draggable(options: {
   }
 
   useEffect(() => {
-    if (draggable) draggable.destroy(), draggable = null;
+    if (draggable.current)
+      draggable.current!.destroy(),
+      draggable.current = null;
     if (!disabled) create_draggable();
 
     // Cleanup
     return () => {
-      if (draggable) draggable.destroy(), draggable = null;
+      if (draggable.current) draggable.current!.destroy(), draggable.current = null;
     };
   }, [disabled]);
 
   useEffect(() => {
     // Cleanup
     return () => {
-      if (draggable) draggable.destroy(), draggable = null;
+      if (draggable.current) draggable.current!.destroy(), draggable.current = null;
     };
   }, []);
 
